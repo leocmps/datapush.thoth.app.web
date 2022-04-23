@@ -1,16 +1,19 @@
 {
+  "experimentalDecorators": true,
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
+    "module": "commonjs",
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "useUnknownInCatchVariables": false,
     "sourceMap": true,
+    "checkJs": false,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "types": [
       "webpack-env",
@@ -27,6 +30,12 @@
       "dom.iterable",
       "scripthost"
     ]
+  },
+  "vueCompilerOptions": {
+    "experimentalCompatMode": 2,
+    "experimentalTemplateCompilerOptions": {
+      "compatConfig": { "MODE": 2 } // optional
+    }
   },
   "include": [
     "src/**/*.ts",
