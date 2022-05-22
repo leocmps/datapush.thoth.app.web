@@ -1,10 +1,16 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
+import VueMask, { VueMaskDirective, VueMaskFilter } from 'v-mask'
 import vuetify from './plugins/vuetify'
+import router from './router'
+import App from './App.vue'
+import store from './store'
+import './plugins/loader'
+import Vue from 'vue'
 
 Vue.config.productionTip = false
+
+Vue.use(VueMask)
+Vue.directive('mask', VueMaskDirective)
+Vue.filter('VMask', VueMaskFilter)
 
 new Vue({
   router,
