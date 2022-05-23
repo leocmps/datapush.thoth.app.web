@@ -27,7 +27,6 @@ const actions: ActionTree<ForumState, RootState> = {
     }
   },
   async postQuestion (_, question: Question) {
-    console.log(question)
     try {
       const response = await ForumService.postQuestion(question)
       return response.data

@@ -5,8 +5,11 @@ import { Segment } from '@/models/Segment'
 import moment from 'moment'
 import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
 import { Action, State } from 'vuex-class'
+import InstructorForm from '../instructor-form/InstructorForm.vue'
 
-@Component
+@Component({
+  components: { InstructorForm }
+})
 export default class LessonDialog extends Vue {
   @Prop({ type: Boolean, default: false })
   readonly value!: boolean
@@ -47,6 +50,7 @@ export default class LessonDialog extends Vue {
     try {
       this.inProgress = true
       await this.postLesson$({ ...this.currentLesson, date: moment(`${this.date}T${this.hour}`, 'DD/MM/YYYYTHH:mm').format('YYYY-MM-DDTHH:mm') })
+      this.clearData()
     } finally {
       this.inProgress = false
     }

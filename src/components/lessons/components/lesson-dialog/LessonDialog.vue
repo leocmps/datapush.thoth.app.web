@@ -48,43 +48,20 @@
           label="Instrutor"
           outlined
         />
-        <v-btn
-          class="ml-2"
-          height="40"
-          icon
-          small
-          width="40"
-        >
-          <v-icon color="white">
-            mdi-plus
-          </v-icon>
-        </v-btn>
+        <instructor-form />
       </div>
-      <div class="d-flex">
-        <v-autocomplete
-          v-model="currentLesson.segmentId"
-          background-color="white"
-          class="mb-4"
-          dense
-          full-width
-          item-text="name"
-          item-value="id"
-          :items="segments"
-          label="Segmento"
-          outlined
-        />
-        <v-btn
-          class="ml-2"
-          height="40"
-          icon
-          small
-          width="40"
-        >
-          <v-icon color="white">
-            mdi-plus
-          </v-icon>
-        </v-btn>
-      </div>
+      <v-autocomplete
+        v-model="currentLesson.segmentId"
+        background-color="white"
+        class="mb-4"
+        dense
+        full-width
+        item-text="name"
+        item-value="id"
+        :items="segments"
+        label="Segmento"
+        outlined
+      />
       <v-text-field
         v-model="currentLesson.url"
         background-color="white"

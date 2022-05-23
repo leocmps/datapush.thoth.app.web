@@ -4,6 +4,7 @@ import router from './router'
 import App from './App.vue'
 import store from './store'
 import './plugins/loader'
+import './plugins/snackbar'
 import Vue from 'vue'
 
 Vue.config.productionTip = false

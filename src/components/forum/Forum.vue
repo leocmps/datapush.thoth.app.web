@@ -87,7 +87,7 @@
             {{ question.title }}
           </div>
           <div class="d-flex flex-column align-start justify-center">
-            <div class="d-flex justify-space-between">
+            <div class="d-flex justify-space-between mb-2">
               <v-avatar
                 class="text-caption black--text mr-4"
                 color="white"
@@ -98,6 +98,7 @@
               </v-avatar>
               {{ question.userName }}
             </div>
+            {{ getQuestionTime(question.date) }}
           </div>
         </div>
       </v-sheet>

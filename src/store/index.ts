@@ -4,7 +4,7 @@ import { UsersService } from '@/services/UsersService'
 import Vue from 'vue'
 import Vuex, { Commit, StoreOptions } from 'vuex'
 import VuexPersistence from 'vuex-persist'
-import { forum, lessons, segments, instructors } from './modules'
+import { forum, lessons, segments, instructors, courses } from './modules'
 
 Vue.use(Vuex)
 export interface RootState {
@@ -78,7 +78,8 @@ export const store: StoreOptions<RootState> = {
     forum,
     lessons,
     segments,
-    instructors
+    instructors,
+    courses
   },
   plugins: [vuexLocal.plugin]
 }

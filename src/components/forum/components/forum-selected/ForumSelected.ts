@@ -1,5 +1,6 @@
 import { Question } from '@/models/Question'
 import QuestionEntity from '@/models/QuestionEntity'
+import moment from 'moment'
 import { Component, Vue } from 'vue-property-decorator'
 import { Action } from 'vuex-class'
 
@@ -48,5 +49,9 @@ export default class ForumSelected extends Vue {
 
   backToForum () {
     this.$router.push({ name: 'Forum' }).catch(() => {})
+  }
+
+  getAnswerTime (answerDate: string) {
+    return moment(answerDate).locale('pt-BR').fromNow()
   }
 }

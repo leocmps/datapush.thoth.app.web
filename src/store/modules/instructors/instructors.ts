@@ -17,6 +17,14 @@ const actions: ActionTree<InstructorState, RootState> = {
     } catch (error: any) {
       throw error.response.data
     }
+  },
+  async postInstructor (_, instructor: Instructor) {
+    try {
+      const response = await InstructorService.postInstructor(instructor)
+      return response.data
+    } catch (error: any) {
+      throw error.response.data
+    }
   }
 }
 const mutations: MutationTree<InstructorState> = {

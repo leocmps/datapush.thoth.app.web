@@ -1,4 +1,5 @@
 import { Question } from '@/models/Question'
+import moment from 'moment'
 import { Component, Vue } from 'vue-property-decorator'
 import { Action, State } from 'vuex-class'
 import ForumDialog from './components/forum-dialog/ForumDialog.vue'
@@ -26,6 +27,10 @@ export default class Forum extends Vue {
 
   getUserInitials (userName: string) {
     return userName.split(' ').map((s) => s.charAt(0)).join('')
+  }
+
+  getQuestionTime (questionDate: string) {
+    return moment(questionDate).locale('pt-BR').fromNow()
   }
 
   setForumSelected (question: Question) {

@@ -2,7 +2,7 @@ import { Lesson } from '@/models/Lesson'
 import moment from 'moment'
 import { Component, Vue } from 'vue-property-decorator'
 import { Action, State } from 'vuex-class'
-import LessonDialog from './components/LessonDialog.vue'
+import LessonDialog from './components/lesson-dialog/LessonDialog.vue'
 
 @Component({
   components: { LessonDialog }

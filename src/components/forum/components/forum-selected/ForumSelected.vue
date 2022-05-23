@@ -28,7 +28,7 @@
           {{ currentQuestion.title }}
         </div>
         <v-spacer />
-        {{ currentQuestion.userName }}
+        por: {{ currentQuestion.userName }}
       </div>
       <v-divider
         class="my-2"
@@ -96,7 +96,8 @@
             >
               UA
             </v-avatar>
-            Usuário Anônimo
+            Usuário Anônimo <br>
+            {{ getAnswerTime(answer.date) }}
           </div>
           <v-divider
             class="mx-2"
