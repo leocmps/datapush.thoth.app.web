@@ -18,17 +18,50 @@ export default class Courses extends Vue {
   @State('segments', { namespace: 'segments' })
   readonly segments!: Segment[]
 
+  segmentSelected: Segment = { id: '', name: '', color: '' }
+  searchText = ''
+  inProgress = false
+
   getCourseTime (course: Course) {
-    return moment.utc(course.duration).format('HH:mm:ss')
+    return moment(new Date().getTime()).hours(0).minutes(course.duration).format('hh:mm')
+  }
+
+  setSegmentSelected (segment: Segment) {
+    if (segment.id === this.segmentSelected.id) this.segmentSelected = { id: '', name: '', color: '' }
+    else this.segmentSelected = segment
+  }
+
+  accessCourse (course: Course) {
+    window.open(course.url, '_blank')
   }
 
   async created () {
+    this.inProgress = true
     await this.getSegments()
     await this.getCourses()
     document.documentElement.classList.remove('disable-scroll')
+    this.inProgress = false
   }
 
   destroyed () {
     document.documentElement.classList.add('disable-scroll')
+  }
+
+  filterBySearchText (courses: Course[]) {
+    return courses.filter((c) => {
+      const searchText = this.searchText.toLowerCase()
+      return JSON.stringify(c.name).toLowerCase().includes(searchText)
+    })
+  }
+
+  filterBySegment (courses: Course[]) {
+    return courses.filter((c) => c.segmentId === this.segmentSelected.id)
+  }
+
+  get coursesFiltered () {
+    let courses = this.courses
+    if (this.searchText.replace(/\s/g, '')) courses = this.filterBySearchText(courses)
+    if (this.segmentSelected.id) courses = this.filterBySegment(courses)
+    return courses
   }
 }

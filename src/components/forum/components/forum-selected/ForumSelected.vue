@@ -1,9 +1,9 @@
 <template>
   <v-sheet
-    class="pa-4 white--text rounded-xl"
-    color="#15161B"
+    class="pa-4 rounded-xl"
+    color="transparent"
     height="calc(100vh - 140px)"
-    width="1200"
+    width="90%"
   >
     <div
       v-if="inProgress"
@@ -14,14 +14,14 @@
     </div>
     <div v-else>
       <div class="d-flex align-center">
-        <div class="text-h5">
+        <div>
           <v-btn
             class="mb-1"
             icon
             small
             @click="backToForum"
           >
-            <v-icon color="white">
+            <v-icon color="black">
               mdi-arrow-left-circle
             </v-icon>
           </v-btn>
@@ -31,8 +31,7 @@
         por: {{ currentQuestion.userName }}
       </div>
       <v-divider
-        class="my-2"
-        dark
+        class="my-2 black"
       />
       <div class="mt-5">
         {{ currentQuestion.message }}
@@ -53,7 +52,7 @@
           </v-icon>
           <v-icon
             v-else
-            color="white"
+            color="black"
           >
             mdi-share-variant
           </v-icon>
@@ -63,34 +62,33 @@
           icon
           small
         >
-          <v-icon color="white">
+          <v-icon color="black">
             mdi-pencil
           </v-icon>
         </v-btn>
       </div>
       <v-divider
-        class="my-2"
-        dark
+        class="my-2 black"
       />
       <v-sheet
-        class="scroller white--text"
+        class="scroller"
         color="transparent"
         height="calc(100vh - 450px)"
       >
         <v-sheet
           v-for="(answers, index) in currentQuestion.answers"
           :key="index"
-          class="py-4 d-flex align-center white--text"
+          class="py-4 d-flex align-center"
           color="transparent"
-          style="border-bottom: 1px solid white !important"
+          style="border-bottom: 1px solid black !important"
         >
           <div
             class="d-flex align-center text-caption"
             style="width: 200px"
           >
             <v-avatar
-              class="text-caption black--text mx-2"
-              color="white"
+              class="text-caption white--text mr-4"
+              color="#52784F"
               rounded
               size="24"
             >
@@ -100,8 +98,7 @@
             {{ getAnswerTime(answer.date) }}
           </div>
           <v-divider
-            class="mx-2"
-            dark
+            class="mx-2 black"
             vertical
           />
           <div
@@ -117,6 +114,7 @@
           v-model="answer"
           background-color="white"
           class="mr-4"
+          color="#52784F"
           dense
           height="80"
           hide-details
@@ -131,7 +129,7 @@
           :loading="postAnswerInProgress"
           @click="postAnswer"
         >
-          <v-icon color="white">
+          <v-icon color="black">
             mdi-send
           </v-icon>
         </v-btn>

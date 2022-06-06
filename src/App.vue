@@ -2,15 +2,15 @@
   <v-app>
     <v-app-bar
       app
-      class="px-16 white--text"
-      color="#151515"
+      class="px-16"
+      color="transparent"
       elevation="0"
     >
       <img
         class="mr-2"
         src="./assets/logo.png"
         style="cursor: pointer"
-        width="24"
+        width="32"
         @click="$router.push({ name: 'Home' }).catch(() => {})"
       >
       <span
@@ -31,7 +31,7 @@
 
       <v-spacer />
 
-      <div class="ml-16 d-flex align-center text-body-2 text-uppercase">
+      <div class="ml-16 d-flex align-centereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee">
         <span
           class="mr-12 highlight"
           @click="$router.push({ name: 'Home' }).catch(() => {})"
@@ -65,12 +65,17 @@
       >
         <template #activator="{ on }">
           <v-btn
+            color="#52784F"
             elevation="0"
             rounded
             v-on="on"
           >
-            <v-icon>mdi-account-circle</v-icon>
-            <v-icon>mdi-menu</v-icon>
+            <v-icon color="white">
+              mdi-account-circle
+            </v-icon>
+            <v-icon color="white">
+              mdi-menu
+            </v-icon>
           </v-btn>
         </template>
         <v-card
@@ -137,7 +142,7 @@ export default class App extends Vue {
   readonly user!: User
 
   @Getter('hasUserLogged')
-  readonly hasUserLogged!: () => boolean
+  readonly hasUserLogged!: boolean
 
   @Mutation('setUser')
   readonly setUser!: (user: User) => void

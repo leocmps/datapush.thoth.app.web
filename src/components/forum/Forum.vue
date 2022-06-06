@@ -6,11 +6,10 @@
     <forum-selected v-if="hasForumSelected" />
     <v-sheet
       v-else
-      class="pa-4 white--text rounded-xl"
-      color="#15161B"
+      class="pa-4 rounded-xl"
+      color="transparent"
       height="calc(100vh - 140px)"
-      style="transform: translate(0)"
-      width="1200"
+      width="90%"
     >
       <div class="d-flex align-center justify-space-between">
         <span>
@@ -20,19 +19,19 @@
         </span>
         <div>
           <div class="mb-2 font-weight-light">
-            <v-icon color="white">
+            <v-icon color="#52784F">
               mdi-account-multiple
             </v-icon>
             A melhor <b>-comunidade-</b>
           </div>
           <div class="mb-2 font-weight-light">
-            <v-icon color="white">
+            <v-icon color="#52784F">
               mdi-message
             </v-icon>
             Qualquer um pode <b>-perguntar-</b>
           </div>
           <div class="mb-2 font-weight-light">
-            <v-icon color="white">
+            <v-icon color="#52784F">
               mdi-forum
             </v-icon>
             Qualquer um pode <b>-responder-</b>
@@ -47,6 +46,7 @@
           v-model="searchText"
           append-icon="mdi-magnify"
           background-color="white"
+          color="#52784F"
           dense
           hide-details
           label="Buscar"
@@ -55,12 +55,11 @@
         />
       </div>
       <v-divider
-        class="my-2"
-        dark
+        class="black my-2"
       />
       <v-sheet
         v-if="inProgress"
-        class="white--text scroller d-flex align-center justify-center"
+        class="scroller d-flex align-center justify-center"
         color="transparent"
         height="calc(100vh - 330px)"
       >
@@ -68,7 +67,7 @@
       </v-sheet>
       <v-sheet
         v-else
-        class="white--text scroller"
+        class="scroller"
         color="transparent"
         max-height="calc(100vh - 330px)"
       >
@@ -76,7 +75,7 @@
           v-for="(question, index) in questionsFiltered"
           :key="index"
           class="pa-4 d-grid highlight-2"
-          style="grid-template-columns: 80px 1fr 180px ; column-gap: 16px; border-bottom: 1px solid white; cursor: pointer; position: relative"
+          style="grid-template-columns: 80px 1fr 200px ; column-gap: 16px; border-bottom: 1px solid black; cursor: pointer; position: relative"
           @click="setForumSelected(question)"
         >
           <div class="d-flex flex-column align-center">
@@ -89,8 +88,8 @@
           <div class="d-flex flex-column align-start justify-center">
             <div class="d-flex justify-space-between mb-2">
               <v-avatar
-                class="text-caption black--text mr-4"
-                color="white"
+                class="text-caption white--text mr-4"
+                color="#52784F"
                 rounded
                 size="24"
               >
@@ -104,6 +103,8 @@
       </v-sheet>
       <v-btn
         bottom
+        class="white--text"
+        color="#768D87"
         fab
         fixed
         right

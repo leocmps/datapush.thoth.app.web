@@ -5,23 +5,10 @@
   >
     <v-sheet
       class="pa-4 scroller rounded-xl"
-      color="#15161B"
+      color="transparent"
       height="calc(100vh - 140px)"
-      width="1200"
+      width="90%"
     >
-      <div class="white--text d-flex align-center justify-space-between mb-4">
-        AULAS
-        <v-btn
-          fab
-          rounded
-          x-small
-          @click="showDialog = true"
-        >
-          <v-icon size="24">
-            mdi-plus
-          </v-icon>
-        </v-btn>
-      </div>
       <div
         v-if="inProgress"
         class="d-flex align-center justify-center"
@@ -33,8 +20,8 @@
         <v-card
           v-for="(lesson, index) in lessons"
           :key="index"
-          class="mb-4 d-flex"
-          color="#3B4651"
+          class="mb-4 d-flex justify-space-between align-center px-2"
+          color="#768D87"
           height="145"
         >
           <v-sheet
@@ -44,23 +31,15 @@
             width="140px"
           >
             <v-avatar
-              class="text-h4 white--text"
+              class="white--text"
               color="#15161B"
               size="82"
+              style="font-size: 32px"
             >
               {{ getInstructorInitials(lesson.instructorName) }}
             </v-avatar>
             <div class="white--text">
               {{ lesson.instructorName }}
-            </div>
-            <div>
-              <v-icon
-                v-for="(rating, ratingIndex) in [1,2,3,4,5]"
-                :key="ratingIndex"
-                color="yellow"
-              >
-                mdi-star
-              </v-icon>
             </div>
           </v-sheet>
           <v-sheet
@@ -72,9 +51,10 @@
             {{ lesson.title }}
           </v-sheet>
           <v-sheet
-            class="white--text text-body-2 pa-2 d-flex flex-column align-start justify-space-around"
+            class="white--text pa-2 d-flex flex-column align-start justify-space-around"
             color="transparent"
             height="100%"
+            style="font-size: 14px"
             width="140px"
           >
             <div class="font-weight-bold">
@@ -100,8 +80,8 @@
             </div>
             <div>Duração: 2h</div>
             <v-btn
-              small
-              width="124"
+              color="#FDF7F2"
+              width="100%"
               @click="accessLesson(lesson)"
             >
               Acessar
@@ -109,6 +89,18 @@
           </v-sheet>
         </v-card>
       </div>
+      <v-btn
+        bottom
+        class="white--text"
+        color="#768D87"
+        fab
+        fixed
+        right
+        small
+        @click="showDialog = true"
+      >
+        <v-icon>mdi-plus</v-icon>
+      </v-btn>
     </v-sheet>
     <lesson-dialog v-model="showDialog" />
   </div>

@@ -22,12 +22,13 @@
     </template>
     <v-card
       class="pa-4"
-      color="#15161B"
+      color="#768D87"
     >
       <v-text-field
         v-model="currentInstructor.name"
         background-color="white"
         class="mb-4"
+        color="#52784F"
         dense
         label="Nome"
         outlined
@@ -36,6 +37,7 @@
         v-model="currentInstructor.segmentId"
         background-color="white"
         class="mb-4"
+        color="#52784F"
         dense
         :disabled="segmentsInProgress"
         full-width

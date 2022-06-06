@@ -6,12 +6,13 @@
   >
     <v-card
       class="pa-8"
-      color="#3B4651"
+      color="#768D87"
     >
       <v-text-field
         v-model="currentLesson.tittle"
         background-color="white"
         class="mb-4"
+        color="#52784F"
         dense
         label="Título"
         outlined
@@ -22,15 +23,18 @@
           v-mask="'##/##/####'"
           background-color="white"
           class="mb-4 mr-2"
+          color="#52784F"
           dense
           label="Data"
           outlined
         />
         <v-text-field
           v-model="hour"
+
           v-mask="'##:##'"
           background-color="white"
           class="mb-4"
+          color="#52784F"
           dense
           label="Horário"
           outlined
@@ -41,6 +45,7 @@
           v-model="currentLesson.instructorId"
           background-color="white"
           class="mb-4"
+          color="#52784F"
           dense
           item-text="name"
           item-value="id"
@@ -54,6 +59,7 @@
         v-model="currentLesson.segmentId"
         background-color="white"
         class="mb-4"
+        color="#52784F"
         dense
         full-width
         item-text="name"
@@ -66,6 +72,7 @@
         v-model="currentLesson.url"
         background-color="white"
         class="mb-4"
+        color="#52784F"
         dense
         label="Link"
         outlined

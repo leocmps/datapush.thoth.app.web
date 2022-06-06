@@ -6,12 +6,13 @@
   >
     <v-card
       class="pa-8"
-      color="#3B4651"
+      color="#768D87"
     >
       <v-text-field
         v-model="currentQuestion.title"
         background-color="white"
         class="mb-4"
+        color="#52784F"
         dense
         label="Título"
         outlined
@@ -20,6 +21,7 @@
         v-model="currentQuestion.message"
         background-color="white"
         class="mb-4"
+        color="#52784F"
         dense
         label="Pergunta"
         outlined

@@ -18,7 +18,7 @@
           align-center
           justify-center
         "
-        color="#332F4B"
+        color="#52784F"
       >
         <div style="max-width: 300px">
           A plataforma para você aprender com experts, dominar as principais
@@ -27,9 +27,9 @@
       </v-sheet>
       <v-divider vertical />
       <v-sheet
-        class="d-flex align-center justify-center"
-        color="#EBEEFF"
-        style="transform: translate(0)"
+        class="d-flex align-center justify-center rounded-r-xl"
+        color="#FDF7F2"
+        style="transform: translate(0); border: 1px solid #52784F;"
       >
         <v-form
           ref="form"
@@ -48,6 +48,7 @@
             v-model="currentUser.name"
             append-icon="mdi-account"
             background-color="white"
+            color="#52784F"
             dense
             label="Nome"
             outlined
@@ -58,6 +59,7 @@
             v-model="currentUser.email"
             append-icon="mdi-at"
             background-color="white"
+            color="#52784F"
             dense
             label="Email"
             outlined
@@ -69,6 +71,7 @@
             v-mask="'###.###.###-##'"
             append-icon="mdi-file-document"
             background-color="white"
+            color="#52784F"
             dense
             label="Documento"
             outlined
@@ -79,6 +82,7 @@
             v-model="currentUser.password"
             :append-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
             background-color="white"
+            color="#52784F"
             dense
             label="Senha"
             outlined
@@ -98,6 +102,8 @@
               Limpar
             </v-btn>
             <v-btn
+              class="white--text"
+              color="#52784F"
               :disabled="!form || inProgress"
               :loading="inProgress"
               width="120"

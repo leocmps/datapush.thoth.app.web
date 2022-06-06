@@ -18,7 +18,7 @@
           align-center
           justify-center
         "
-        color="#332F4B"
+        color="#52784F"
       >
         <div style="max-width: 300px">
           A plataforma para você aprender com experts, dominar as principais
@@ -27,9 +27,9 @@
       </v-sheet>
       <v-divider vertical />
       <v-sheet
-        class="d-flex align-center justify-center"
-        color="#EBEEFF"
-        style="transform: translate(0)"
+        class="d-flex align-center justify-center rounded-r-xl"
+        color="#FDF7F2"
+        style="transform: translate(0); border: 1px solid #52784F;"
       >
         <v-form
           ref="form"
@@ -49,6 +49,7 @@
             append-icon="mdi-at"
             background-color="white"
             class="mb-4"
+            color="#52784F"
             dense
             hide-details
             label="Email"
@@ -60,6 +61,7 @@
             v-model="password"
             :append-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
             background-color="white"
+            color="#52784F"
             dense
             hide-details
             label="Senha"
@@ -79,6 +81,8 @@
               label="Lembrar"
             />
             <v-btn
+              class="white--text"
+              color="#52784F"
               :disabled="!form || inProgress"
               :loading="inProgress"
               width="120"
