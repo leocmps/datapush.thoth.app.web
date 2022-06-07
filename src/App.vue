@@ -3,8 +3,8 @@
     <v-app-bar
       app
       class="px-16"
-      color="transparent"
-      elevation="0"
+      color="#FDF7F2"
+      elevate-on-scroll
     >
       <img
         class="mr-2"
